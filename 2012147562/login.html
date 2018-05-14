@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+
+<!-- Project1, login.html, 로그인 -->
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>My TOUR(로그인)</title> <!-- 타이틀 바에 표시할 title -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- 요구사항 : 부트스트랩 사용을 위한 link -->
+
+    <link rel="stylesheet" media="screen and (max-width:480px)" type="text/css" href="css/mobileStyle.css"/> <!-- 요구사항 : media query -->
+    <link rel="stylesheet" media="screen and (min-width:481px)" type="text/css" href="css/style.css"/> <!-- 요구사항 : external css 스타일시트 적용 -->
+    <!-- 요구사항 : media query를 사용하여 서로 다른 크기의 브라우저(PC, 모바일)에 대해 별도의 스타일시트 적용-->
+
+    <style>
+      h1 { font-family: arial, sans-serif; text-align: left; } /* 요구사항 : font-family, text-align */
+
+      p.a {
+        font-style: italic; font-weight: bold; text-decoration : underline;/* 요구사항 : font-style, font-weight, text-decoration */
+      }
+
+      .special {color: purple}
+
+      .login-container2{
+          width: 500px;
+          margin: 0 auto;
+          padding: 20px 40px 40px;
+          text-align: center;
+          background: #fff;
+          border: 1px solid #ccc;
+      }
+
+      #output{
+          position: absolute;
+          width: 300px;
+          top: -75px;
+          left: 0;
+          color: #fff;
+      }
+
+      #output.alert-success{
+          background: rgb(25, 204, 25);
+      }
+
+      #output.alert-danger{
+          background: rgb(228, 105, 105);
+      }
+
+      .avatar{
+          width: 100px;height: 100px;
+          margin: 10px auto 30px;
+          border-radius: 100%;
+          border: 2px solid #aaa;
+          background-size: cover;
+      }
+
+      .form-box input{
+          width: 100%;
+          padding: 10px;
+          text-align: center;
+          height:40px;
+          border: 1px solid #ccc;;
+          background: #fafafa;
+          transition:0.2s ease-in-out;
+      }
+
+      .form-box input:focus{
+          outline: 0;
+          background: #eee;
+      }
+
+      .form-box input[type="text"]{
+          border-radius: 5px 5px 0 0;
+          text-transform: lowercase;
+      }
+
+      .form-box input[type="password"]{
+          border-radius: 0 0 5px 5px;
+          border-top: 0;
+      }
+
+      div.promotion {
+        position: relative;
+        -webkit-animation: mymove 5s infinite;
+        animation: mymove 5s infinite;
+      }
+
+      @keyframes mymove {
+        from {left: -100px;}
+        to {left: 100px;}
+      }
+
+    </style>
+
+  </head>
+
+
+  <body>
+    <h1 class="special"><strong>로그인</strong></h1>  <!-- 요구사항 : heading -->
+
+    <header> <!-- 요구사항 : header 구조 엘리먼트 -->
+      <p style = "text-align: center;">
+        <img class="banner" src = "banner.png" height = "250"  alt = "banner"> <!-- 요구사항 : image, 배너 이미지 삽입 -->
+      </p>
+      개발자 : 최인호 / <a href="mailto:dlsgh7231@naver.com"> e-mail : dlsgh7231@naver.com </a> / <a href="developer.html">소개페이지</a> <!-- 요구사항 : hyperlink -->
+    </header>
+
+    <div id="menubar">
+      <nav>
+        <ul>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='index.html'"> 메인페이지 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='intro.html'"> 페이지소개 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='developer.html'"> 개발자소개 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='register.html'"> 회원가입 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='login.html'"> 로그인 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='tip.html'"> 여행tip </button></li>
+        </ul>
+      </nav>
+
+      <section>
+        <br><br><br><br><br><br>
+          <article>
+              <div class="container2">
+              	<div class="login-container2">
+                    <div id="output"></div>
+                    <div class="avatar"></div>
+                    <div class="form-box">
+                        <form method = "post" action = "index.html">
+                            <input name="user" type="text" placeholder="username">
+                            <input type="password" placeholder="password">
+
+                            <button class="btn btn-info btn-block login" onclick="location.href='index.html'">Login</button>
+
+                        </form>
+                    </div>
+                </div>
+
+              </div>
+          </article>
+      </section>
+
+      <aside>
+        <div class="promotion"><img src = "special.png" class="promotion_logo" alt = "promotion tag"></div>
+          <p class="a" style="font-size: 10pt; color: #0000ff" >&sect; 그림위에 마우스를 올려보세요! &sect;</p>
+
+          <div class="promtionTravel" style="position: relative">
+            <a href="#"><img src = "japan.png" class="promoted" alt = "japan view"></a>
+          </div>
+          <div class="price" style="position: relative; left:0px; top: -250px;"><p>299,000 ~ </p></div>
+          <h4 style="position: relative; left:0px; top: -250px;"> [SALE]일본 오사카 벚꽃투어 </h4>
+
+          <div class="promtionTravel" style="position: relative; left:0px; top: -250px;">
+            <a href="#"><img src = "iceland.png" class="promoted" alt = "iceland view"></a>
+          </div>
+          <div class="price" style="position: relative; left:0px; top: -500px;"><p>2,199,000 ~ </p></div>
+          <h4 style="position: relative; left:0px; top: -500px;"> [SALE]아이슬란드 오로라 투어 </h4>
+      </aside>
+      </div>
+
+      <footer>
+        <p>
+        <br>
+        (주)마이투어┃대표:최인호┃주소: 서울특별시 서대문구 신촌동
+        사업자 등록번호: XXX-XX-XXXXX┃사업자정보확인┃
+
+        고객센터: 1234-5678┃팩스: 12-345-6789┃개인정보 보호책임자: 최인호
+      </p>
+      </footer>
+
+      <script src="js/bootstrap.js"></script>
+  </body>
+</html>

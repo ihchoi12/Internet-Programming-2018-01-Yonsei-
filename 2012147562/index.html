@@ -1,0 +1,238 @@
+<!DOCTYPE html>
+
+<!-- Project1, index.html, 메인 페이지 -->
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>My TOUR(메인페이지)</title> <!-- 타이틀 바에 표시할 title -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- 요구사항 : 부트스트랩 사용을 위한 link -->
+
+    <link rel="stylesheet" media="screen and (max-width:480px)" type="text/css" href="css/mobileStyle.css"/> <!-- 요구사항 : media query -->
+    <link rel="stylesheet" media="screen and (min-width:481px)" type="text/css" href="css/style.css"/> <!-- 요구사항 : external css 스타일시트 적용 -->
+    <!-- 요구사항 : media query를 사용하여 서로 다른 크기의 브라우저(PC, 모바일)에 대해 별도의 스타일시트 적용-->
+
+    <style> /* 요구사항 : embedded css 스타일시트 적용 */
+      h1 { font-family: arial, sans-serif; text-align: left; } /* 요구사항 : font-family, text-align */
+      p.a {
+        font-style: italic; font-weight: bold; text-decoration : underline;/* 요구사항 : font-style, font-weight, text-decoration */
+      }
+      .special {color: purple} /* 요구사항 : color */
+      .travelSearch { /* travelSearch 클래스에 대한 스타일 설정. */
+        z-index:1;    /* 요구사항 : z-index, z-index는 값이 클수록 화면 앞쪽에 위치된다. */
+        position:relative;
+        width:100%;
+        height:100%;
+      }
+      .travelSearch:after{
+        width:100%;
+        height:100%;
+        z-index:-1; /* 배경은 폼보다 뒤쪽에 위치해야 하므로 z-index를 1보다 작게 지정 */
+        position:absolute;   /* 요구사항 : position, 배경이미지의 위치는 그 구역의 좌상단 끝에서부터 시작하게 하기 위해 absolute positioning 하였다. */
+        top:0px;
+        left:0px;
+        content:"";
+        background-image: url('travel.png') ; /* 요구사항 : background-image, 배경에 나타날 이미지 지정 */
+        background-repeat:no-repeat;  /* 배경은 한번만 나타날 것 */
+        background-position:center;
+        background-origin:content-box;
+        background-size: 100%;  /* 배경은 그 구역을 완전히 채울 것 */
+        opacity: 0.5!important; filter:alpha(opacity=30); /* 배경 위에 오는 내용이 잘 보이도록 opacity를 0.5로 설정 */
+      }
+      /* 요구사항 : z-index를 이용하여 배경을 밑에 깔고, 그 위에 폼을 위치시킴 */
+
+      div.promotion {
+        position: relative;
+        animation: mymove 5s infinite; /* 요구사항 : animation, 애니메이션은 한 번당 5초동안 나타남 */
+      }
+
+      @keyframes mymove { /* animation 요구사항에 대한 움직임 명시 */
+        from {left: -100px;}
+        to {left: 100px;}
+      }/* 왼쪽 -100px위치부터 +100px위치까지 이동 */
+    </style>
+  </head>
+
+  <body>
+    <h1 class="special"><strong>메인페이지</strong></h1>  <!-- 요구사항 : heading -->
+    <header> <!-- 요구사항 : header 구조 엘리먼트 -->
+      <p style = "text-align: center;">
+        <img class="banner" src = "banner.png" height = "250"  alt = "banner"> <!-- 요구사항 : image, 배너 이미지 삽입 -->
+      </p>
+      개발자 : 최인호 / <a href="mailto:dlsgh7231@naver.com"> e-mail : dlsgh7231@naver.com </a> / <a href="developer.html">소개페이지</a> <!-- 요구사항 : hyperlink -->
+    </header>
+
+    <div id="menubar">
+      <nav> <!-- 요구사항 : nav 구조 엘리먼트 -->
+        <ul><!-- 네비게이션 버튼들 -->
+          <li><button type="button" class="btn btn-primary" onclick="location.href='index.html'"> 메인페이지 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='intro.html'"> 페이지소개 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='developer.html'"> 개발자소개 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='register.html'"> 회원가입 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='login.html'"> 로그인 </button></li>
+          <li><button type="button" class="btn btn-primary" onclick="location.href='tip.html'"> 여행tip </button></li> <!-- 요구사항 : list -->
+        </ul>
+      </nav>
+
+      <section> <!-- 요구사항 : section 구조 엘리먼트 -->
+        <article> <!-- 요구사항 : article 구조 엘리먼트 -->
+          <div class="travelSearch">
+            <form method = "post" action = "server.html"> <!-- 요구사항 : form -->
+              <br><br>
+              <p class="a" style="font-size: 20pt; color: #0000ff" > &sect; 여행검색 &sect;</p> <!-- 요구사항 : special character  --> <!-- 요구사항 : inline, font-size, color  -->
+
+              <br><br><br>
+              <p>
+                <label>
+                  여행국가(대륙) :
+                </label>
+                &nbsp; &nbsp; &nbsp; &nbsp; &nbsp; &nbsp;
+                <strong>일본: </strong>
+                <input name = "country" type = "radio" value = "J" checked> &nbsp; &nbsp; <!-- 요구사항 : type="radio"  -->
+                <strong>중국: </strong>
+                <input name = "country" type = "radio" value = "C" > &nbsp; &nbsp;
+                <strong>미국: </strong>
+                <input name = "country" type = "radio" value = "A" > &nbsp; &nbsp;
+                <strong>유럽: </strong>
+                <input name = "country" type = "radio" value = "E" > &nbsp; &nbsp;
+                <strong>기타: </strong>
+                <input name = "country" type = "radio" value = "O" > &nbsp; &nbsp;
+              </p>
+
+              <br><br>
+              <p>
+                <label>여행도시:
+                  <input type="text" placeholder="ex:도쿄" autofocus required> <!-- 요구사항 : type="text"  --> <!-- 요구사항 : autofocus  --> <!-- 요구사항 : required  -->
+                </label>
+              </p>
+
+              <br><br>
+              <p>
+                <label>출국일:
+                  <input type = "date"> <!-- 요구사항 : type="date"  -->
+                </label>
+                <label>귀국일:
+                  <input type = "date">
+
+                </label>
+              </p>
+              <br><br>
+
+              <p><strong>여행스타일: </strong> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>절약형:
+                  <input name = "Travel Style1" type = "checkbox" value = "A" > <!-- 요구사항 : type="checkbox"  -->
+                </label> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>휴식형:
+                  <input name = "Travel Style2" type = "checkbox" value = "B" >
+                </label> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>실속형:
+                  <input name = "Travel Style3" type = "checkbox" value = "C" >
+                </label> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>활동형:
+                  <input name = "Travel Style4" type = "checkbox" value = "C" >
+                </label> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>자유형:
+                  <input name = "Travel Style5" type = "checkbox" value = "C" >
+                </label> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label>호화여행:
+                  <input name = "Travel Style6" type = "checkbox" value = "C" >
+                </label>
+              </p>
+              <br><br>
+
+              <p><strong>선호항공사:</strong> &nbsp; &nbsp; &nbsp; &nbsp;
+                <label for = "txtList1"> 첫번째
+                <input type="text" id ="txtList1"
+                  placeholder="입력 및 선택" list="airlines1" autocomplete="on" />  <!-- 요구사항 : autocomplete  --> <!-- 요구사항 : placeholder  -->
+
+                  <datalist id="airlines1">
+                    <option value="대한항공">
+                    <option value="아시아나항공">
+                    <option value="에미레이트항공">
+                    <option value="핀에어">
+                    <option value="일본">
+                    <option value="제주항공">
+                    <option value="싱가포르항공">
+                    <option value="중국동방항공">
+                    <option value="타이항공">
+                    <option value="에어프랑스">
+                    <option value="에어로플로트항공">
+                    <option value="영국항공">
+                    <option value="기타">
+                  </datalist>
+                </label>
+                <label for = "txtList2"> 두번째
+                  <input type="text" id ="txtList2"
+                    placeholder="입력 및 선택" list="airlines2" autocomplete="on" />  <!-- 요구사항 : autocomplete  -->
+
+                  <datalist id="airlines2">
+                    <option value="대한항공">
+                    <option value="아시아나항공">
+                    <option value="에미레이트항공">
+                    <option value="핀에어">
+                    <option value="일본">
+                    <option value="제주항공">
+                    <option value="싱가포르항공">
+                    <option value="중국동방항공">
+                    <option value="타이항공">
+                    <option value="에어프랑스">
+                    <option value="에어로플로트항공">
+                    <option value="영국항공">
+                    <option value="기타">
+                  </datalist>
+              </label>
+            </p>
+
+            <br><br>
+            <p><strong>연령대 :</strong> &nbsp; &nbsp; &nbsp; &nbsp;
+              <label>
+                 <input type="number" min="0" max="100" step="10" value="10" /> 대 <!-- 요구사항 : type="number"  -->
+              </label>
+            </p>
+
+            <br><br>
+            <p>
+              <button type="button" id="jq_oversea_search1" class="btn-danger" onclick="location.href='result.html'">검색하기</button>
+
+            </p>
+          </form>
+
+        </div>
+      </article>
+    </section>
+
+    <aside>
+      <div class="promotion"><img src = "special.png" class="promotion_logo" alt = "promotion tag"></div>
+      <p class="a" style="font-size: 10pt; color: #0000ff">&sect; 그림위에 마우스를 올려보세요! &sect;</p>
+
+      <div class="promtionTravel" style="position: relative">
+        <a href="#"><img src = "japan.png" class="promoted" alt = "japan view"></a>
+      </div>
+      <div class="price" style="position: relative; left:0px; top: -250px;"><p>299,000 ~ </p></div>
+      <h4 style="position: relative; left:0px; top: -250px;"> [SALE]일본 오사카 벚꽃투어 </h4>
+
+      <div class="promtionTravel" style="position: relative; left:0px; top: -250px;">
+        <a href="#"><img src = "iceland.png" class="promoted" alt = "iceland view"></a>
+      </div>
+      <div class="price" style="position: relative; left:0px; top: -500px;"><p>2,199,000 ~ </p></div>
+      <h4 style="position: relative; left:0px; top: -500px;"> [SALE]아이슬란드 오로라 투어 </h4>
+      <!-- 할인행사중인 여행지 이미지와 가격표를 겹쳐놓고, transition을 이용하여 이미지위에 마우스포인터가 올라갔을 때 가격이 보이도록 함."  -->
+    </aside>
+    </div>
+
+    <footer>
+      <p>
+        <br>
+        (주)마이투어┃대표:최인호┃주소: 서울특별시 서대문구 신촌동
+        사업자 등록번호: XXX-XX-XXXXX┃사업자정보확인┃
+
+        고객센터: 1234-5678┃팩스: 12-345-6789┃개인정보 보호책임자: 최인호
+      </p>
+    </footer>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>

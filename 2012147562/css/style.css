@@ -1,0 +1,111 @@
+  a { text-decoration: none;}
+
+  h1 {
+    text-shadow: 2px 2px; /* 요구사항 : text-shadow */
+  }
+
+  body {
+      text-align: center;
+      color: #000;
+      width: 80%;
+      margin: 0 auto;
+      background-color: #FFFFFF;
+  }
+
+  header, footer {
+      border: 2px solid #000;  /* 요구사항 : border */
+      margin: 3px;
+  }
+
+  header {
+      padding: 10px; /* 요구사항 : padding */
+      height: 300px;
+      background-color: #F0FFFF;
+  }
+
+  nav, section, aside {
+      border: 1px solid #000;
+      margin: 0px;
+      float: left; /* 요구사항 : float, PC 환경의 브라우저에서 nav, section, aside는 같은 수직위치에 나란히 배열 */
+      height: 700px;
+  }
+
+  nav {
+      padding-top: 30px;
+      background-color: #F0FFFF; /* 요구사항 : background-color */
+      width: 15%;
+  }
+
+  section {
+      background: linear-gradient(to bottom right, #E6E6FA, #40E0D0); /* 요구사항 : gradient */
+      width: 60%;
+  }/* 배경에 gradient효과. 오른쪽 아래 대각선방향으로 #E6E6FA 색에서 #40E0D0 색으로 서서히 변하는 효과를 줌 */
+
+  aside {
+      width: 25%;
+  }
+
+  footer {
+      height: 50px;
+      background-color: #F0FFFF;
+      position: relative;
+      clear: both; /* footer가 가장 아래쪽에 위치하게 하기 위하여 clear 속성을 사용함 */
+  }
+
+  article {
+      width: 100%;
+      height: 100%;
+      margin: 0 auto; /* article 구역이 가운데 정렬 되도록 함. */
+  }
+
+
+  #menubar {
+    margin : 0 auto ;
+    text-align: center;
+  }
+
+  #menubar button.btn-primary {
+    width: 60%;
+    margin : 20px auto ; /* 요구사항 : margin */
+    text-align: center;
+  }
+
+  div.promtionTravel {
+    width: 100%;
+    height: 250px; /* promtionTravel클래스의 화면상 위치 지정 */
+    background: black; /* 배경은 검은색 */
+    transition-property: opacity;  /* 요구사항 : transition */
+    transition-duration: 1s; /* transition은 1초동안 완료 */
+    opacity: 1.0!important; filter:alpha(opacity=10); /* opacity를 1.0으로 설정하여 뒤쪽이 전혀 보이지 않게 */
+    z-index: 1;
+  }
+
+  div.promtionTravel:hover {
+      opacity: 0.1!important; filter:alpha(opacity=10); /*마우스 포인터를 hover했을때 opacity가 0.1까지 감소되게 함 */
+  }
+
+  div.price {
+    width: 100%;
+    height: 250px;
+    background: red;
+    z-index: -1; /* 가격표시는 여행지 이미지 뒤쪽에 위치하고 있어야 하므로 z-index를 -1로 지정 */
+    position: absolute; /* 다른 엘리먼트와 관계없이 절대적 위치 지정 */
+    top: 50%;
+    left: 50%;
+  }
+
+  .price p {
+    font-style: oblique;
+    font-weight: bold;
+    font-size: 250%;
+    color: white; /* 요구사항 : color */
+    margin: 0;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%); /* 요구사항 : transform */
+  }
+
+  img.banner { width: 100%; }
+  img.promotion_logo { width: 40%; height: 30%; }
+  img.promoted { width: 100%; height: 100%; }

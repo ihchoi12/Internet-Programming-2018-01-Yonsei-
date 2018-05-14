@@ -1,0 +1,146 @@
+<!DOCTYPE html>
+
+<!-- Project1, index.html, 페이지소개 -->
+<html>
+  <head>
+    <meta charset = "utf-8">
+    <title>My TOUR(페이지소개)</title> <!-- 타이틀 바에 표시할 title -->
+    <link rel="stylesheet" href="css/bootstrap.css"> <!-- 요구사항 : 부트스트랩 사용을 위한 link -->
+
+    <link rel="stylesheet" media="screen and (max-width:480px)" type="text/css" href="css/mobileStyle.css"/>
+    <link rel="stylesheet" media="screen and (min-width:481px)" type="text/css" href="css/style.css"/> <!-- 요구사항 : external css 스타일시트 적용 -->
+    <!-- 요구사항 : media query를 사용하여 서로 다른 크기의 브라우저(PC, 모바일)에 대해 별도의 스타일시트 적용-->
+
+    <style>
+      h1 { font-family: arial, sans-serif; text-align: left; } /* 요구사항 : font-family, text-align */
+
+      p.a {
+        font-style: italic; font-weight: bold; text-decoration : underline;/* 요구사항 : font-style, font-weight, text-decoration */
+      }
+
+      .special {color: purple}
+      div.box {
+        width: 70%;
+        margin: auto;
+        background-color: #F5F5DC;
+        padding : 30px;
+        border-radius: 25px; /* 요구사항 : rounded corner */
+        box-shadow: 10px 10px 5px grey; /* 요구사항 : box-shadow */
+      }
+      div.promotion {
+        position: relative;
+        animation: mymove 5s infinite;
+      }
+      @-webkit-keyframes mymove {
+      from {left: 0px;}
+      to {left: 100px;}
+      }
+
+      @keyframes mymove {
+          from {left: -100px;}
+          to {left: 100px;}
+      }
+    </style>
+<!-- 요구사항 : font-family, font-style  -->
+
+
+
+
+  </head>
+  <body>
+    <h1 class="special"><strong>페이지소개</strong></h1>  <!-- 요구사항 : heading -->
+    <header> <!-- 요구사항 : header 구조 엘리먼트 -->
+      <p style = "text-align: center;">
+        <img class="banner" src = "banner.png" height = "250"  alt = "banner"> <!-- 요구사항 : image, 배너 이미지 삽입 -->
+      </p>
+      개발자 : 최인호 / <a href="mailto:dlsgh7231@naver.com"> e-mail : dlsgh7231@naver.com </a> / <a href="developer.html">소개페이지</a> <!-- 요구사항 : hyperlink -->
+    </header>
+
+    <div id="menubar">
+    <nav>
+      <ul>
+        <li><button type="button" class="btn btn-primary" onclick="location.href='index.html'"> 메인페이지 </button></li>
+        <li><button type="button" class="btn btn-primary" onclick="location.href='intro.html'"> 페이지소개 </button></li>
+        <li><button type="button" class="btn btn-primary" onclick="location.href='developer.html'"> 개발자소개 </button></li>
+        <li><button type="button" class="btn btn-primary" onclick="location.href='register.html'"> 회원가입 </button></li>
+        <li><button type="button" class="btn btn-primary" onclick="location.href='login.html'"> 로그인 </button></li>
+        <li><button type="button" class="btn btn-primary" onclick="location.href='tip.html'"> 여행tip </button></li>
+      </ul>
+    </nav>
+
+      <section style="overflow:scroll;">
+          <article>
+              <img class="banner" src = "modu1.png" height = "250"  alt = "modu1.png">
+              <div class="box">
+
+                <h2> *비교사이트 : 모두투어* </h2><br>
+                <h4>- 모두투어와 비교한 이 페이지의 특징 -</h4><br>
+                모두투어는 페이지마다 화면의 구성이 달라지고, 한 화면에 담겨있는 정보의 양이 많다.
+                그래서 한눈에 잘 들어오지 않고, 사용자 입장에서 익숙해지기 전까지는 조금 복잡하게 느껴질 수 있다.
+                myTour는 페이지별 핵심 기능을 하는 section 구역을 제외한 나머지 구역들은 모든 페이지에서
+                일관되게 유지시켜, 사용자가 페이지에서 원하는 정보를 얻기 수월하게 하였다.
+                그리고 패키지여행의 가장 큰 단점인 여행스타일 문제를 보완하기 위하여,
+                여행상품을 검색할때 여행 스타일에 따른 분류를 추가하였고, 여행 상품마다
+                현재 신청한 인원들의 성비를 제공하였다. 모두투어에서는 이런 정보를 제공하지 않는다.
+                <br><br>
+                <h4> - 서비스 소개 - </h4><br>
+                예전의 여행은 크게 두가지로 나눌 수 있었습니다. 패키지여행과 자유여행.
+                하지만 여행을 즐기는 사람들이 많아지고, 여행에 대한 정보가 많아지면서
+                자신의 스타일에 꼭 맞는 여행을 찾는 사람들이 늘고 있습니다. 자유여행은
+                막막하고 패키지여행은 자신의 스타일과 맞지 않아 망설이는 모든 여행객들을
+                위해, <strong>myTour</strong>가 새로운 여행 방식을 제안합니다!
+                <br><br><br>
+                1. 패키지 여행의 가장 큰 단점, 자신과 맞지 않는 여행 스타일입니다. 그렇다고
+                바쁜 와중에 많은 정보를 직접 찾아보고 여행 일정을 짜는것은 너무 힘듭니다.
+                저희 <strong>myTour</strong> 에서는 더 세분화된 여행 방식을 통하여
+                다양한 고객들의 취향을 만족시킬 수 있도록 하였습니다.
+                <br><br><br>
+                2. 당신이 여행에서 가장 중요하게 생각하는 것은 무엇입니까?? 여러가지가
+                있을 수 있겠지만, 역시 일행이 누구인지가 가장 중요할 것입니다. 하지만
+                패키지 여행을 많이 다녀보신 분들이라면, 연령대가 너무 다르거나 이성만
+                너무 많아서 불편했던 경험이 있으실겁니다. 저희 <strong>myTour</strong> 에서는
+                여행 상품마다 현재 패키지 신청 인원들의 성비를 제공하고, 각 상품별 대상 연령을
+                정해놓았습니다.
+                <br><br><br>
+
+                이제 패키지여행의 편리함과 자유여행의 만족감을 동시에 느껴보세요!
+          
+            </div>
+          </article>
+      </section>
+
+      <aside>
+        <div class="promotion"><img src = "special.png" class="promotion_logo" alt = "promotion tag"></div>
+          <p class="a" style="font-size: 10pt; color: #0000ff" >&sect; 그림위에 마우스를 올려보세요! &sect;</p>
+
+          <div class="promtionTravel" style="position: relative">
+            <a href="#"><img src = "japan.png" class="promoted" alt = "japan view"></a>
+          </div>
+          <div class="price" style="position: relative; left:0px; top: -250px;"><p>299,000 ~ </p></div>
+          <h4 style="position: relative; left:0px; top: -250px;"> [SALE]일본 오사카 벚꽃투어 </h4>
+
+          <div class="promtionTravel" style="position: relative; left:0px; top: -250px;">
+            <a href="#"><img src = "iceland.png" class="promoted" alt = "iceland view"></a>
+          </div>
+          <div class="price" style="position: relative; left:0px; top: -500px;"><p>2,199,000 ~ </p></div>
+          <h4 style="position: relative; left:0px; top: -500px;"> [SALE]아이슬란드 오로라 투어 </h4>
+
+      </aside>
+      </div>
+      <footer>
+        <p>
+        <br>
+        (주)마이투어┃대표:최인호┃주소: 서울특별시 서대문구 신촌동
+        사업자 등록번호: XXX-XX-XXXXX┃사업자정보확인┃
+
+        고객센터: 1234-5678┃팩스: 12-345-6789┃개인정보 보호책임자: 최인호
+      </p>
+      </footer>
+
+
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+    <script src="js/bootstrap.js"></script>
+
+  </body>
+</html>
