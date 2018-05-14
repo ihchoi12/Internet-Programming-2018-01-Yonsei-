@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<resultofval>
+
+  <result id="result">
+    <id>ID : 6~10자의 영문 대소문자, 숫자와 특수기호(_)만 사용 가능하고, 적어도 1개의 숫자와 대문자를 포함한다.</id>
+    <pwd>pwd</pwd>
+    <birth>birth</birth>
+    <email>email</email>
+    <tel>tel</tel>
+  </result>
+
+</bookstore>
